@@ -1,75 +1,18 @@
-// Anything that can be immersed in a variable is an object.
-// int i = 89; - I use the literal 'ex.: 89' - an object of a certain type is initialized.
-
 void main() {
-  //   Numbers
-  //    num
-  //   /   \
-  // int   double
+  // An iteration variable is a variable then change its number using for loop or any else.
 
-  num numInt = 1;
-  print(numInt.runtimeType);
+  // 0xAARRGGBB
+  // 0-9, A-F
 
-  num numFloat = 1.2;
-  print(numFloat.runtimeType);
-  // If there is specific work with this type?
-  int i = 89;
-  print(i.runtimeType);
-  double j = 2.09;
-  print(j.runtimeType);
+  // const is don't change for compilation or runtime.
+  const hexRedColor = 0xFFFF0000;
+  print(hexRedColor);
+  // hexRedColor = 2;
+  // Take ERROR: Can't assign to the const variable 'hexRedColor'.
 
-  // If it is not important to work with the type of a variable, then...
-  var x = 1;
-  print(x.runtimeType);
-  var y = 1.07;
-  print(y.runtimeType);
-  var s = 'hello';
-  print(s.runtimeType);
-
-  // If a variable is not initialized then by defult its type is "null".
-  var l;
-  print(l);
-  //============================
-
-  // Strings
-  var str = 'It\'s string!';
-  print(str);
-
-  var multiStr = """
-  Hello,
-  World.
-  It's 
-  me.""";
-  print(multiStr);
-
-  var interpolationStr =
-      '$s, Haraka. How are you? If $y round to int = ${y.round()}';
-  print(interpolationStr);
-  //============================
-
-  // Booleans
-  var boolTrue = true;
-  print(boolTrue);
-
-  var boolFalse = false;
-  print(boolFalse);
-
-  var boolNull = null;
-  print(boolNull);
-  //============================
-
-  // Dart is a statically typed language.
-  // var jk = 'Hi';
-  // jk = 3;
-  // print(jk);
-  // Error: A value of type 'int' can't be assigned to a variable of type 'String'.
-
-  dynamic d = 'Hi';
-  print(d);
-  d = 3;
-  print(d);
-  d = true;
-  print(d);
-
-  // Dynamic - When I want to change type of variable. Because Dart is language has a Static type variable.
+  final onlyOne = 1.0584.round();
+  print(onlyOne);
+  // Once a variable has been initialized, it cannot be changed.
+  // onlyOne = 3;
+  // ERROR: Can't assign to the final variable 'onlyOne'.
 }
