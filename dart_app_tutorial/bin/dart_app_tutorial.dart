@@ -1,18 +1,32 @@
 void main() {
-  // An iteration variable is a variable then change its number using for loop or any else.
+  // int -> double | toDouble()
 
-  // 0xAARRGGBB
-  // 0-9, A-F
+  int intNum = 3;
+  double doubleNum = intNum.toDouble();
 
-  // const is don't change for compilation or runtime.
-  const hexRedColor = 0xFFFF0000;
-  print(hexRedColor);
-  // hexRedColor = 2;
-  // Take ERROR: Can't assign to the const variable 'hexRedColor'.
+  print(doubleNum);
 
-  final onlyOne = 1.0584.round();
-  print(onlyOne);
-  // Once a variable has been initialized, it cannot be changed.
-  // onlyOne = 3;
-  // ERROR: Can't assign to the final variable 'onlyOne'.
+  // double -> int | round()
+  double x = 1.5;
+  int y = x.round();
+  print(y);
+
+  // int -> string | toString()
+  // double -> string | toStringAsFixed(3) ? 3 is num of numbers after the decimal point.
+
+  // string -> int | type.parse()
+  var stringNumDouble = "2.4";
+  num z = double.parse(stringNumDouble);
+  print(z);
+
+  var stringNumInt = "2";
+  num zq = int.parse(stringNumInt);
+  print(zq);
+
+  // Try to convert the type.
+  // If not, then null.
+  // string ?-> int\double\num | tryParse() <- if False, then var = null.
+  var stringNum = "2.0777";
+  num zh = int.tryParse(stringNum);
+  print(zh);
 }
