@@ -1,32 +1,40 @@
+import 'dart:io';
+
 void main() {
-  // int -> double | toDouble()
+  print('Enter Number: ');
 
-  int intNum = 3;
-  double doubleNum = intNum.toDouble();
+  // Input number
+  var number = int.parse(stdin.readLineSync());
 
-  print(doubleNum);
+  // Check Less or Greater.
+  number < 5 ? print("Ok is Less than 5") : print("No, is Greater than 5");
 
-  // double -> int | round()
-  double x = 1.5;
-  int y = x.round();
-  print(y);
+  // Check Even or Odd.
+  if (number.isOdd) {
+    print('Odd');
+  } else {
+    print('Even');
+  }
 
-  // int -> string | toString()
-  // double -> string | toStringAsFixed(3) ? 3 is num of numbers after the decimal point.
+  switch (number) {
+    case 1:
+      print('One');
+      break;
+    case 564:
+      print('IS A CASE #2');
+      break;
 
-  // string -> int | type.parse()
-  var stringNumDouble = "2.4";
-  num z = double.parse(stringNumDouble);
-  print(z);
 
-  var stringNumInt = "2";
-  num zq = int.parse(stringNumInt);
-  print(zq);
+    case 10:
+      print('Maybe it will be the next case >>>');
+      continue label1;
+    label1:
+    case 11:
+      print('>>> This case!');
+      break;
 
-  // Try to convert the type.
-  // If not, then null.
-  // string ?-> int\double\num | tryParse() <- if False, then var = null.
-  var stringNum = "2.0777";
-  num zh = int.tryParse(stringNum);
-  print(zh);
+
+    default:
+      print('Unknownd');
+  }
 }
