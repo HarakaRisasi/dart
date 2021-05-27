@@ -1,40 +1,40 @@
 import 'dart:io';
 
 void main() {
-  print('Enter Number: ');
+  num numNull;
 
-  // Input number
-  var number = int.parse(stdin.readLineSync());
+  print(numNull); // >>> null
 
-  // Check Less or Greater.
-  number < 5 ? print("Ok is Less than 5") : print("No, is Greater than 5");
+// ========================================================================
+  //Check NUll
+  // print(number.isNegative); >>> Error
+  print(numNull?.isNegative); // >>> NUll
 
-  // Check Even or Odd.
-  if (number.isOdd) {
-    print('Odd');
-  } else {
-    print('Even');
-  }
+// ========================================================================
+  num number = 8;
+  // if null then print from the right side,
+  print(number ?? "Hello Is Null"); // >>> "Hello Is Null" or 8
 
-  switch (number) {
-    case 1:
-      print('One');
-      break;
-    case 564:
-      print('IS A CASE #2');
-      break;
+  number = null;
+  // if not then print the value of the variable.
+  print(number ?? "Hello Is Null");
 
+// ========================================================================
+  // If the variable was initialized, then do not assign a new value 5.
+  num numberOne = 1;
+  numberOne ??= 5;
+  print(numberOne); // >>> 1
 
-    case 10:
-      print('Maybe it will be the next case >>>');
-      continue label1;
-    label1:
-    case 11:
-      print('>>> This case!');
-      break;
+  // but if the variable has value Null, then assign a new value 5.
+  numNull ??= 4;
+  print(numNull); // >>> 4
 
-
-    default:
-      print('Unknownd');
-  }
+// ========================================================================
+  //is as is!
+  num a = 1;
+  // NUM has not ability to check on EVEN or ODD values.
+  // Therefore it must be represented as an integer.
+  print((a as int).isEven);
+  // check, an "a" is not a double?
+  print((a is! double));
 }
