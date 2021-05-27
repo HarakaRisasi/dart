@@ -1,40 +1,16 @@
 import 'dart:io';
 
 void main() {
-  num numNull;
+  var numbers1 = [1, 2, 3, 4, 5];
 
-  print(numNull); // >>> null
+  print(numbers1.length);
+  print(numbers1.isEmpty);
+  print(numbers1);
 
-// ========================================================================
-  //Check NUll
-  // print(number.isNegative); >>> Error
-  print(numNull?.isNegative); // >>> NUll
+  var numbers2 = [];
+  numbers2.addAll(numbers1);
+  print(numbers2);
 
-// ========================================================================
-  num number = 8;
-  // if null then print from the right side,
-  print(number ?? "Hello Is Null"); // >>> "Hello Is Null" or 8
-
-  number = null;
-  // if not then print the value of the variable.
-  print(number ?? "Hello Is Null");
-
-// ========================================================================
-  // If the variable was initialized, then do not assign a new value 5.
-  num numberOne = 1;
-  numberOne ??= 5;
-  print(numberOne); // >>> 1
-
-  // but if the variable has value Null, then assign a new value 5.
-  numNull ??= 4;
-  print(numNull); // >>> 4
-
-// ========================================================================
-  //is as is!
-  num a = 1;
-  // NUM has not ability to check on EVEN or ODD values.
-  // Therefore it must be represented as an integer.
-  print((a as int).isEven);
-  // check, an "a" is not a double?
-  print((a is! double));
+  numbers2.removeRange(0, 2); // remove range from 0 to n-1.
+  print(numbers2);
 }
