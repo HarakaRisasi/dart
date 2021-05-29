@@ -1,23 +1,18 @@
-import 'dart:io';
+// import 'dart:io';
+
+//TypeDef - is a consise way to refer to a type.
+typedef IntList = List<int>;
+IntList il = [1, 2, 3];
+
+typedef ListMapper<X> = Map<X, List<X>>;
+ListMapper<String> m1 = {
+  'a': ['Hello', '2']
+};
 
 void main() {
+  print(il);
 
-  // Anonymous function
-  (int a, int b) {
-    return a + b;
-  };
+  print(m1['a']);
   
-
-  // A function can be passed to another funciton.
-  int sum(int a, int b) {
-    return a + b;
-  }
-
-  doWork(sum);
-}
-
-void doWork(int Function(int, int) callback) {
-  var result = callback(1, 2);
-
-  print(result);
+  assert(il.length < 2); // False
 }
