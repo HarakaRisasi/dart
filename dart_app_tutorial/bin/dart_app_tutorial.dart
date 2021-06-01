@@ -13,7 +13,7 @@ void main() {
   // ================================================
   var article = NewArticle()
     // ..newBody = 'Hellokljhlkjhlkjhklh'; >>> Unhandled exception: Title must be at least 10 characters
-    ..newBody = 'hello';
+    ..newBody = 'hello, world';
 
   // get value from getter;
   print(article.newBody);
